@@ -1,0 +1,32 @@
+@import '../App/Mixins';
+
+.content, .infoWrapper {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.chatsScrollWrapper {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.chatsContainer {
+  border-right: 1px solid #eee;
+  display: flex;
+  min-width: 320px;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.infoWrapper {
+  @mixin flexAlignCenter;
+}
+
+.fabAdd {
+  bottom: 20px;
+  position: absolute;
+  right: 20px;
+  z-index: 3;
+}

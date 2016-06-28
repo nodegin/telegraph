@@ -1,0 +1,61 @@
+@import '../App/Mixins';
+
+.root {
+  position: relative;
+  width: 100%;
+}
+
+.paperToolbar {
+  align-items: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .15);
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+}
+
+.header, .messages, .footer {
+  position: absolute;
+}
+
+.header {
+  height: 64px;
+  padding: 0 24px;
+  top: 0;
+
+  span, small {
+    display: inline-block;
+  }
+  span {
+    font-size: 14pt;
+    @mixin sameHeight 28px;
+  }
+  small {
+    font-size: 10pt;
+    @mixin sameHeight 20px;
+  }
+}
+
+.messages {
+  bottom: 54px;
+  left: 0;
+  overflow-x: hidden;
+  right: 0;
+  top: 64px;
+}
+
+.footer {
+  bottom: 0;
+  height: 54px;
+  padding: 0 8px;
+
+  .button {
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    width: 24px;
+  }
+  .inputField {
+    padding: 0 4px;
+    width: 100%;
+  }
+}

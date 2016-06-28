@@ -1,0 +1,42 @@
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90,150;
+    stroke-dashoffset: -35;
+  }
+  to {
+    stroke-dasharray: 90,150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+}
+
+.spinner > .path {
+  animation: dash 1.5s ease-in-out infinite;
+  stroke-dasharray: 1,150;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  stroke-width: 4px;
+}

@@ -1,0 +1,14 @@
+@define-mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@define-mixin flexAlignCenter {
+  align-items: center;
+  justify-content: center;
+}
+
+@define-mixin sameHeight $height {
+  height: $height;
+  line-height: $height;
+}

@@ -1,0 +1,96 @@
+{
+  "name": "telegraph",
+  "version": "1.0.0",
+  "description": "telegraph - web ui for telegram bots",
+  "homepage": "https://git.io/telegraph",
+  "author": "nodegin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodegin/telegraph.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nodegin/telegraph/issues"
+  },
+  "main": "app/main.jsx",
+  "scripts": {
+    "lint": "eslint '**/*.@(js|jsx)'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:api": "NODE_ENV=development nodemon -e js --watch api api/server.js --exec babel-node",
+    "start:app": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --hot --colors --content-base app",
+    "start": "concurrently --kill-others 'npm run start:api' 'npm run start:app'",
+    "bundle": "NODE_ENV=production webpack -p --config webpack.prod.config.js",
+    "deploy": "npm run bundle && NODE_ENV=production babel-node api/server.js",
+    "validate": "npm ls"
+  },
+  "dependencies": {
+    "express": "4.x",
+    "body-parser": "1.x",
+    "proxy-middleware": "0.x",
+    "socket.io": "1.x",
+    "react": "15.x",
+    "react-dom": "15.x",
+    "react-tap-event-plugin": "1.x",
+    "classnames": "2.x",
+    "velocity-react": "1.x",
+    "normalize.css": "4.x",
+    "mdi": "1.x",
+    "material-ui": "0.x",
+    "mkdirp-promise": "2.x",
+    "node-telegram-bot-api": "0.x",
+    "monkey-patches-node-telegram-bot-api": "0.x"
+  },
+  "devDependencies": {
+    "nodemon": "1.x",
+    "babel-runtime": "6.x",
+    "babel-polyfill": "6.x",
+    "babel-cli": "6.x",
+    "babel-core": "6.x",
+    "babel-eslint": "6.x",
+    "babel-loader": "6.x",
+    "babel-preset-stage-0-promises": "1.x",
+    "babel-preset-es2015": "6.x",
+    "babel-preset-react": "6.x",
+    "copy-webpack-plugin": "3.x",
+    "css-loader": "0.x",
+    "eslint": "2.x",
+    "eslint-config-airbnb": "9.x",
+    "eslint-plugin-jsx-a11y": "1.x",
+    "eslint-plugin-react": "5.x",
+    "eslint-plugin-import": "1.x",
+    "postcss": "5.x",
+    "postcss-loader": "0.x",
+    "postcss-import": "8.x",
+    "postcss-cssnext": "2.x",
+    "postcss-mixins": "4.x",
+    "postcss-nested": "1.x",
+    "cssnano": "3.x",
+    "style-loader": "0.x",
+    "css-loader": "0.x",
+    "json-loader": "0.x",
+    "webpack": "1.x",
+    "webpack-dev-server": "1.x",
+    "concurrently": "2.x"
+  },
+  "babel": {
+    "presets": ["react", "es2015", "stage-0-promises"],
+    "env": {
+      "build": {
+        "optional": ["optimisation", "minification"]
+      }
+    }
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "semi": [2, "never"],
+      "no-confusing-arrow": 0,
+      "react/jsx-quotes": 0,
+      "jsx-quotes": [2, "prefer-double"]
+    }
+  }
+}

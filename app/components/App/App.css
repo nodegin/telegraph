@@ -1,0 +1,35 @@
+@import 'http://cdn.materialdesignicons.com/1.6.50/css/materialdesignicons.min.css';
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,500';
+@import 'normalize.css';
+@import './Mixins.css';
+
+html *[type] {
+  -webkit-appearance: none;
+}
+
+[class^="mdi"] {
+  font-family: 'Material Design Icons';
+}
+
+.flexWrapper {
+  @mixin flexAlignCenter;
+  display: flex;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  height: 640px;
+  margin: 0 auto;
+  width: 960px;
+
+  @media only screen and (max-width:960px) {
+    & {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+

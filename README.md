@@ -10,6 +10,8 @@
 
 #### Developing
 
+> Please ensure your machine has enough resources to perform compilation during installation
+
 ```bash
 $ npm install
 $ npm start
@@ -20,7 +22,7 @@ $ open http://127.0.0.1:8080
 
 ```bash
 $ npm run deploy
-$ cd build && ls
+$ cd dist && ls
 ```
 
 #### Screenshots

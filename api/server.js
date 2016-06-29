@@ -124,6 +124,7 @@ async function init() {
         Store.chats[chatId] = {
           id: chatId,
           title: msg.chat.title,
+          type: msg.chat.type,
         }
         /*  Update the store  */
         Chain = Chain.then(() => updateStore(storeFile, Store))
@@ -173,6 +174,7 @@ async function init() {
         Store.chats[chatId] = {
           id: chatId,
           title: msg.chat.title,
+          type: msg.chat.type,
         }
         Chain = Chain.then(() => updateStore(storeFile, Store))
         await Chain

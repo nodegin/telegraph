@@ -41,6 +41,26 @@
   overflow-x: hidden;
   right: 0;
   top: 64px;
+
+  .messageHolder {
+    display: flex;
+    padding: 12px 16px;
+
+    .avatar {
+      margin-right: 24px;
+    }
+    .messageContentContainer {
+      flex: 1;
+      word-break: break-word;
+
+      .messageContent {
+        background: #ddd;
+        border-radius: 4px;
+        display: inline-block;
+        padding: 8px 12px;
+      }
+    }
+  }
 }
 
 .footer {

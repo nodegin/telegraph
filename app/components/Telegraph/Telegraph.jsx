@@ -27,6 +27,8 @@ export default class Telegraph extends React.Component {
     this.props.onLoad(true)
     this.socket.on('syncStore', (store) => this.setState(store))
     this.socket.on('message', (data) => {
+      /*  Force use local time  */
+      data.msg.date = +new Date
       let messages = this.state.messages[data.bot]
       if (!messages) {
         messages = []
@@ -71,7 +73,6 @@ export default class Telegraph extends React.Component {
         listItems.push(<Subheader inset={true}>No group was found for this bot.</Subheader>)
       }
       for (let chatId of this.state.bots[botId].chats) {
-        console.log(this.state.bots[botId], chatId)
         listItems.push(
           <ListItem
             leftAvatar={<Avatar src="http://icons.iconarchive.com/icons/mahm0udwally/all-flat/256/User-icon.png" />}

@@ -34,7 +34,6 @@
     "classnames": "2.x",
     "velocity-react": "1.x",
     "normalize.css": "4.x",
-    "mdi": "1.x",
     "material-ui": "0.x",
     "mkdirp-promise": "2.x",
     "node-telegram-bot-api": "0.x",

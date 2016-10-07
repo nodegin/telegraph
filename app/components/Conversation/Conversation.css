@@ -22,16 +22,24 @@
   padding: 0 24px;
   top: 0;
 
-  span, small {
-    display: inline-block;
-  }
-  span {
-    font-size: 14pt;
-    @mixin sameHeight 28px;
-  }
-  small {
-    font-size: 10pt;
-    @mixin sameHeight 20px;
+  div {
+    width: 100%;
+    
+    span, small {
+      display: inline-block;
+    }
+    span {
+      font-size: 14pt;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      @mixin sameHeight 28px;
+    }
+    small {
+      font-size: 10pt;
+      @mixin sameHeight 20px;
+    }
   }
 }
 

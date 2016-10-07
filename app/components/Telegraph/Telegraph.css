@@ -15,12 +15,14 @@
   border-right: 1px solid #eee;
   display: flex;
   min-width: 320px;
+  max-width: 320px;
   overflow-x: hidden;
   position: relative;
   z-index: 2;
 }
 
 .infoWrapper {
+  height: 100%;
   @mixin flexAlignCenter;
 }
 
